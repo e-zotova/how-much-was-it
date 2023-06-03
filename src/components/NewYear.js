@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 
-function OldCalculator() {
+function NewYear({ percentage, calculatePercentage }) {
   const [formValue, setFormValue] = useState({
-    salary: "",
-    price: "",
+    salary: 0,
+    price: 0,
   });
 
   const [year, setYear] = useState("");
-  const [percentage, setPercentage] = useState("");
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -21,8 +20,7 @@ function OldCalculator() {
     e.preventDefault();
     const { year, salary, price } = formValue;
 
-    let percentage = price/salary * 100;
-    setPercentage(percentage.toFixed(2));
+    calculatePercentage(price, salary);
     setYear(year);
   };
 
@@ -70,4 +68,4 @@ function OldCalculator() {
   );
 }
 
-export default OldCalculator;
+export default NewYear;

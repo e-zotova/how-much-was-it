@@ -1,30 +1,28 @@
 import React, { useState } from "react";
 
-function OldCalculator() {
-  const [oldFormValue, setOldFormValue] = useState({
-    oldSalary: "",
-    oldPrice: "",
+function OldYear({oldPercentage, calculateOldPercentage}) {
+  const [formValue, setFormValue] = useState({
+    salary: 0,
+    price: 0,
   });
-  
+
   const [year, setYear] = useState("");
-  const [percentage, setPercentage] = useState("");
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setOldFormValue({
-      ...oldFormValue,
+    setFormValue({
+      ...formValue,
       [name]: value,
     });
   };
 
   const onSubmit = (e) => {
     e.preventDefault();
-    const { oldYear, oldSalary, oldPrice } = oldFormValue;
+    const { year, salary, price } = formValue;
 
-    let percentage = oldPrice/oldSalary * 100;
-    setPercentage(percentage.toFixed(2));
-    setYear(oldYear);
-   }
+    calculateOldPercentage(price, salary);
+    setYear(year);
+  };
 
   return (
     <form className={`calculator__form`} onSubmit={onSubmit}>
@@ -32,31 +30,31 @@ function OldCalculator() {
         <p className="calculator__header">Какой был год?</p>
         <input
           id="oldYear"
-          name="oldYear"
-          type="oldYear"
+          name="year"
+          type="year"
           className="calculator__input"
           autocomplete="off"
-          value={oldFormValue.oldYear}
+          value={formValue.year}
           onChange={handleChange}
           required
         />
         <p className="calculator__header">Какая была зарплата?</p>
         <input
-          id="old-salary"
-          name="oldSalary"
-          type="oldSalary"
+          id="oldSalary"
+          name="salary"
+          type="salary"
           className="calculator__input"
-          value={oldFormValue.oldSalary}
+          value={formValue.salary}
           onChange={handleChange}
           required
         />
         <p className="calculator__header">Сколько стоило?</p>
         <input
-          id="old-price"
-          name="oldPrice"
-          type="oldPrice"
+          id="oldPrice"
+          name="price"
+          type="price"
           className="calculator__input"
-          value={oldFormValue.oldPrice}
+          value={formValue.price}
           onChange={handleChange}
           required
         />
@@ -65,10 +63,10 @@ function OldCalculator() {
         Посчитать
       </button>
       <div className="calculator__result">
-        В {year} году стоило {percentage}% от зарплаты
+        В {year} году стоило {oldPercentage}% от зарплаты
       </div>
     </form>
   );
 }
 
-export default OldCalculator;
+export default OldYear;

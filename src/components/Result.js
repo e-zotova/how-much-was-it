@@ -1,15 +1,18 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
-function Result({ year, oldResult, newResult, handleResult }) {
+function Result({ isClicked, oldPercentage, newPercentage }) {
 
- // В {year} было {oldResult > newResult ? "хуже" : "лучше"}
-//  <button type="submit" className="calculator__save-button" handleResult={handleResult}>
-//   Посмотреть результат
-// </button>
+  const [result, setResult] = useState(0);
+
+  useEffect(() => {
+    setResult(Number(oldPercentage) > Number(newPercentage) ? "хуже." : "лучше.");
+    console.log(oldPercentage > newPercentage);
+  }, [isClicked, newPercentage])
 
   return (
     <div>
-      <div className="result">  
+      <div className="result">
+        В {1990} году было {result}
       </div>
     </div>
   );

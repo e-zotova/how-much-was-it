@@ -3,7 +3,7 @@ import React from "react";
 function Footer () {
   return (
     <footer className="footer">
-      Елена Зотова, 2023
+      &copy; 2023
     </footer>
   ); 
 }
