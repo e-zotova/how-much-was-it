@@ -2,6 +2,9 @@
 @import url(../src/blocks/header/header.css);
 @import url(../src/blocks/calculator/__grid/calculator__grid.css);
 @import url(../src/blocks/calculator/__form/calculator__form.css);
+@import url(../src/blocks/calculator/__header/calculator__header.css);
+@import url(../src/blocks/calculator/__input/calculator__input.css);
 @import url(../src/blocks/calculator/__save-button/calculator__save-button.css);
+@import url(../src/blocks/calculator/__result/calculator__result.css);
 @import url(../src/blocks/result/result.css);
 @import url(../src/blocks/footer/footer.css);

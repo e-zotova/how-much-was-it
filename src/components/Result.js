@@ -1,16 +1,18 @@
 import React from "react";
 
-function Result ({}) {
+function Result({ year, oldResult, newResult, handleResult }) {
 
-  const onCalculate = (e) => {
-    
-  }
+ // В {year} было {oldResult > newResult ? "хуже" : "лучше"}
+//  <button type="submit" className="calculator__save-button" handleResult={handleResult}>
+//   Посмотреть результат
+// </button>
 
   return (
-    <div className="result" onCalculate={onCalculate}>
-      Раньше было лучше
+    <div>
+      <div className="result">  
+      </div>
     </div>
-  ); 
+  );
 }
 
 export default Result;
