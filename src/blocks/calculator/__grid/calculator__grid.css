@@ -1,0 +1,4 @@
+.calculator__grid {
+  display: flex;
+  justify-content: space-evenly;
+}

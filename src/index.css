@@ -1,13 +1,7 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+@import url(../src/blocks/page/page.css);
+@import url(../src/blocks/header/header.css);
+@import url(../src/blocks/calculator/__grid/calculator__grid.css);
+@import url(../src/blocks/calculator/__form/calculator__form.css);
+@import url(../src/blocks/calculator/__save-button/calculator__save-button.css);
+@import url(../src/blocks/result/result.css);
+@import url(../src/blocks/footer/footer.css);

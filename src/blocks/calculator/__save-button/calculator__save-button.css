@@ -1,0 +1,11 @@
+.calculator__save-button {
+  margin-top: 26px;
+  text-align: center;
+  font-size: 26px;
+  background-color: transparent;
+}
+
+.calculator__save-button:hover {
+  opacity: .6;
+  cursor: pointer;
+}
