@@ -7,4 +7,5 @@
 @import url(../src/blocks/calculator/__save-button/calculator__save-button.css);
 @import url(../src/blocks/calculator/__result/calculator__result.css);
 @import url(../src/blocks/result/result.css);
+@import url(../src/blocks/result/__text/result__text.css);
 @import url(../src/blocks/footer/footer.css);
