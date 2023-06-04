@@ -5,7 +5,13 @@ function Result({ isClicked, oldPercentage, percentage }) {
   const [result, setResult] = useState("");
 
   useEffect(() => {
-    setResult(oldPercentage > percentage ? "хуже." : "лучше.");
+    if (oldPercentage > percentage) {
+      setResult("хуже.");
+    } else if (oldPercentage === percentage) {
+      setResult("также.");
+    } else {
+      setResult("лучше.");
+    }
   }, [isClicked, oldPercentage, percentage])
 
   return (
