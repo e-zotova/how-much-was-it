@@ -1,19 +1,16 @@
 import React, { useState, useEffect } from "react";
 
-function Result({ isClicked, oldPercentage, newPercentage }) {
+function Result({ isClicked, oldPercentage, percentage }) {
 
-  const [result, setResult] = useState(0);
+  const [result, setResult] = useState("");
 
   useEffect(() => {
-    setResult(Number(oldPercentage) > Number(newPercentage) ? "хуже." : "лучше.");
-    console.log(oldPercentage > newPercentage);
-  }, [isClicked, newPercentage])
+    setResult(oldPercentage > percentage ? "хуже." : "лучше.");
+  }, [isClicked, oldPercentage, percentage])
 
   return (
-    <div>
-      <div className="result">
-        В {1990} году было {result}
-      </div>
+    <div className="result">
+      <p className="result__text">В {1990} году было {result}</p>
     </div>
   );
 }

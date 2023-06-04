@@ -2,8 +2,8 @@ import React, { useState } from "react";
 
 function NewYear({ percentage, calculatePercentage }) {
   const [formValue, setFormValue] = useState({
-    salary: 0,
-    price: 0,
+    salary: "",
+    price: "",
   });
 
   const [year, setYear] = useState("");
@@ -58,7 +58,7 @@ function NewYear({ percentage, calculatePercentage }) {
           required
         />
       </div>
-      <button type="submit" className="button calculator__save-button">
+      <button type="submit" className="calculator__save-button">
         Посчитать
       </button>
       <div className="calculator__result">

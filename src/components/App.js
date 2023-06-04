@@ -9,18 +9,18 @@ function App() {
 
   const [oldPercentage, setOldPercentage] = useState(0);
   const [percentage, setPercentage] = useState(0);
-  const [isClicked, setIsButtonClicked] = useState(false);
+  const [isClicked, setIsClicked] = useState(false);
 
   function calculateOldPercentage (price, salary) {
     let percentage = (price / salary) * 100;
-    setOldPercentage(percentage.toFixed(2));
-    setIsButtonClicked(true);
+    setOldPercentage(Math.round(percentage));
+    setIsClicked(true);
   }
 
   function calculatePercentage (price, salary) {
     let percentage = (price / salary) * 100;
-    setPercentage(percentage.toFixed(2));
-    setIsButtonClicked(true);
+    setPercentage(Math.round(percentage));
+    setIsClicked(true);
   }
 
   return (
