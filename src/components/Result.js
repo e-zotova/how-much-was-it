@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-function Result({ isClicked, oldPercentage, percentage }) {
+function Result({ isClicked, year, oldPercentage, percentage }) {
 
   const [result, setResult] = useState("");
 
@@ -16,7 +16,7 @@ function Result({ isClicked, oldPercentage, percentage }) {
 
   return (
     <div className="result">
-      <p className="result__text">В {1990} году было {result}</p>
+      <p className="result__text">В {year} году было {result}</p>
     </div>
   );
 }

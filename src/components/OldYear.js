@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function OldYear({oldPercentage, calculateOldPercentage}) {
+function OldYear({changeOldYear, oldPercentage, calculateOldPercentage}) {
   const [formValue, setFormValue] = useState({
     salary: "",
     price: "",
@@ -22,6 +22,7 @@ function OldYear({oldPercentage, calculateOldPercentage}) {
 
     calculateOldPercentage(price, salary);
     setYear(year);
+    changeOldYear(year);
   };
 
   return (
@@ -33,7 +34,6 @@ function OldYear({oldPercentage, calculateOldPercentage}) {
           name="year"
           type="year"
           className="calculator__input"
-          autocomplete="off"
           value={formValue.year}
           onChange={handleChange}
           required

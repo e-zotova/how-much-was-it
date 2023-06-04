@@ -7,13 +7,19 @@ import Footer from "./Footer";
 
 function App() {
 
+  const [oldYear, setOldYear] = useState("");
   const [oldPercentage, setOldPercentage] = useState(0);
   const [percentage, setPercentage] = useState(0);
   const [isClicked, setIsClicked] = useState(false);
 
+  const changeOldYear = (oldYear) => {
+    setOldYear(oldYear);
+  }
+
   function calculateOldPercentage (price, salary) {
     let percentage = (price / salary) * 100;
     setOldPercentage(Math.round(percentage));
+    setOldYear(oldYear);
     setIsClicked(true);
   }
 
@@ -27,10 +33,10 @@ function App() {
     <div className="page">
       <Header className="header" />
       <div className="calculator__grid">
-        <OldYear oldPercentage={oldPercentage} calculateOldPercentage={calculateOldPercentage} />
+        <OldYear changeOldYear={changeOldYear} oldPercentage={oldPercentage} calculateOldPercentage={calculateOldPercentage} />
         <NewYear percentage={percentage} calculatePercentage={calculatePercentage} />
       </div>
-      <Result isClicked={isClicked} oldPercentage={oldPercentage} percentage={percentage}/>
+      <Result isClicked={isClicked} year={oldYear} oldPercentage={oldPercentage} percentage={percentage}/>
       <Footer />
     </div>
   );
