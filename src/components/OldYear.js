@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function OldYear({changeOldYear, oldPercentage, calculateOldPercentage}) {
+function OldYear({ changeOldYear, oldPercentage, calculateOldPercentage }) {
   const [formValue, setFormValue] = useState({
     salary: "",
     price: "",
