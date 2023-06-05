@@ -17,16 +17,18 @@ function App() {
     setOldYear(oldYear);
   }
 
+  function calculate(price, salary) {
+    return Math.round((price / salary) * 100);
+  }
+
   function calculateOldPercentage (price, salary) {
-    let percentage = (price / salary) * 100;
-    setOldPercentage(Math.round(percentage));
+    setOldPercentage(calculate(price, salary));
     setOldYear(oldYear);
     setIsOldClicked(true);
   }
 
   function calculatePercentage (price, salary) {
-    let percentage = (price / salary) * 100;
-    setPercentage(Math.round(percentage));
+    setPercentage(calculate(price, salary));
     setIsNewClicked(true);
   }
 

@@ -38,7 +38,7 @@ function OldYear({changeOldYear, oldPercentage, calculateOldPercentage}) {
           onChange={handleChange}
           required
         />
-        <p className="calculator__header">Какая была зарплата?</p>
+        <p className="calculator__header">Какая была зарплата в месяц?</p>
         <input
           id="oldSalary"
           name="salary"
