@@ -1,7 +1,12 @@
 import React, { useState, useEffect } from "react";
 
-function Result({ isClicked, year, oldPercentage, percentage }) {
-
+function Result({
+  isOldClicked,
+  isNewClicked,
+  year,
+  oldPercentage,
+  percentage,
+}) {
   const [result, setResult] = useState("");
 
   useEffect(() => {
@@ -12,11 +17,20 @@ function Result({ isClicked, year, oldPercentage, percentage }) {
     } else {
       setResult("лучше.");
     }
-  }, [isClicked, oldPercentage, percentage])
+  }, [isOldClicked, isNewClicked, oldPercentage, percentage]);
 
   return (
     <div className="result">
-      <p className="result__text">В {year} году было {result}</p>
+      {(!isOldClicked || !isNewClicked) && (
+        <p className="result__placeholder">
+          Чтобы увидеть результат, посчитайте значения за оба года.
+        </p>
+      )}
+      {isOldClicked && isNewClicked && (
+        <p className="result__text">
+          В {year} году было {result}
+        </p>
+      )}
     </div>
   );
 }
