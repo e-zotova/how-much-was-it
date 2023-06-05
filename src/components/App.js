@@ -10,25 +10,22 @@ function App() {
   const [oldYear, setOldYear] = useState("");
   const [oldPercentage, setOldPercentage] = useState(0);
   const [percentage, setPercentage] = useState(0);
+
   const [isOldClicked, setIsOldClicked] = useState(false);
   const [isNewClicked, setIsNewClicked] = useState(false);
 
-  const changeOldYear = (oldYear) => {
-    setOldYear(oldYear);
-  }
+  const changeOldYear = oldYear => setOldYear(oldYear);
 
-  function calculate(price, salary) {
-    return Math.round((price / salary) * 100);
-  }
+  const calculatePercentage = (price, salary) => Math.round((price / salary) * 100);
 
-  function calculateOldPercentage (price, salary) {
-    setOldPercentage(calculate(price, salary));
+  const calculateOldPercentage = (price, salary) => {
+    setOldPercentage(calculatePercentage(price, salary));
     setOldYear(oldYear);
     setIsOldClicked(true);
   }
 
-  function calculatePercentage (price, salary) {
-    setPercentage(calculate(price, salary));
+  const calculateNewPercentage = (price, salary) => {
+    setPercentage(calculatePercentage(price, salary));
     setIsNewClicked(true);
   }
 
@@ -37,7 +34,7 @@ function App() {
       <Header className="header" />
       <div className="calculator__grid">
         <OldYear changeOldYear={changeOldYear} oldPercentage={oldPercentage} calculateOldPercentage={calculateOldPercentage} />
-        <NewYear percentage={percentage} calculatePercentage={calculatePercentage} />
+        <NewYear percentage={percentage} calculatePercentage={calculateNewPercentage} />
       </div>
       <Result isOldClicked={isOldClicked} isNewClicked={isNewClicked} year={oldYear} oldPercentage={oldPercentage} percentage={percentage}/>
       <Footer />
