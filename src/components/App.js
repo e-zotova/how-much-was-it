@@ -6,7 +6,7 @@ import Footer from "./Footer";
 
 function App() {
   const [oldPercentage, setOldPercentage] = useState(0);
-  const [percentage, setPercentage] = useState(0);
+  const [newPercentage, setNewPercentage] = useState(0);
 
   const [isOldClicked, setIsOldClicked] = useState(false);
   const [isNewClicked, setIsNewClicked] = useState(false);
@@ -26,15 +26,15 @@ function App() {
         <Form
           percentage={oldPercentage}
           setPercentage={setOldPercentage}
-          calculatePercentage={oldClicked}
+          buttonClicked={oldClicked}
           yearHeader={"Какой был год?"}
           salaryHeader={"Какая была зарплата в месяц?"}
           priceHeader={"Сколько стоило?"}
         />
         <Form
-          percentage={percentage}
-          setPercentage={setPercentage}
-          calculatePercentage={newClicked}
+          percentage={newPercentage}
+          setPercentage={setNewPercentage}
+          buttonClicked={newClicked}
           yearHeader={"С каким годом сравнить?"}
           salaryHeader={"C какой зарплатой сравнить?"}
           priceHeader={"С какой ценой сравнить?"}
@@ -44,7 +44,7 @@ function App() {
         isOldClicked={isOldClicked}
         isNewClicked={isNewClicked}
         oldPercentage={oldPercentage}
-        percentage={percentage}
+        newPercentage={newPercentage}
       />
       <Footer />
     </div>

@@ -4,19 +4,19 @@ function Result({
   isOldClicked,
   isNewClicked,
   oldPercentage,
-  percentage,
+  newPercentage,
 }) {
   const [result, setResult] = useState("");
 
   useEffect(() => {
-    if (oldPercentage > percentage) {
+    if (oldPercentage > newPercentage) {
       setResult("хуже.");
-    } else if (oldPercentage === percentage) {
+    } else if (oldPercentage === newPercentage) {
       setResult("также.");
     } else {
       setResult("лучше.");
     }
-  }, [isOldClicked, isNewClicked, oldPercentage, percentage]);
+  }, [isOldClicked, isNewClicked, oldPercentage, newPercentage]);
 
   return (
     <div className="result">

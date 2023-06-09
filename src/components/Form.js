@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function Form({ percentage, setPercentage, calculatePercentage, yearHeader, salaryHeader, priceHeader }) {
+function Form({ percentage, setPercentage, buttonClicked, yearHeader, salaryHeader, priceHeader }) {
   const [formValue, setFormValue] = useState({
     salary: "",
     price: "",
@@ -20,9 +20,9 @@ function Form({ percentage, setPercentage, calculatePercentage, yearHeader, sala
     e.preventDefault();
     const { year, salary, price } = formValue;
 
-    setPercentage(Number.parseFloat((price / salary) * 100));
-    calculatePercentage();
+    setPercentage((price / salary) * 100);
     setYear(year);
+    buttonClicked();
   };
 
   return (
