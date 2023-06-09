@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 function Result({
   isOldClicked,
   isNewClicked,
-  year,
   oldPercentage,
   percentage,
 }) {
@@ -28,7 +27,7 @@ function Result({
       )}
       {isOldClicked && isNewClicked && (
         <p className="result__text">
-          В {year} году было {result}
+          Раньше было {result}
         </p>
       )}
     </div>

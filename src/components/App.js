@@ -1,31 +1,21 @@
 import React, { useState } from "react";
 import Header from "./Header";
-import OldYear from "./OldYear";
-import NewYear from "./NewYear";
+import Form from "./Form";
 import Result from "./Result";
 import Footer from "./Footer";
 
 function App() {
-  const [oldYear, setOldYear] = useState("");
   const [oldPercentage, setOldPercentage] = useState(0);
   const [percentage, setPercentage] = useState(0);
 
   const [isOldClicked, setIsOldClicked] = useState(false);
   const [isNewClicked, setIsNewClicked] = useState(false);
 
-  const changeOldYear = (oldYear) => setOldYear(oldYear);
-
-  const calculatePercentage = (price, salary) =>
-    Math.round((price / salary) * 100);
-
-  function calculateOldPercentage (price, salary) {
-    setOldPercentage(calculatePercentage(price, salary));
-    setOldYear(oldYear);
+  function oldClicked() {
     setIsOldClicked(true);
   };
 
-  function calculateNewPercentage (price, salary) {
-    setPercentage(calculatePercentage(price, salary));
+  function newClicked() {
     setIsNewClicked(true);
   };
 
@@ -33,20 +23,26 @@ function App() {
     <div className="page">
       <Header className="header" />
       <div className="calculator__grid">
-        <OldYear
-          changeOldYear={changeOldYear}
-          oldPercentage={oldPercentage}
-          calculateOldPercentage={calculateOldPercentage}
+        <Form
+          percentage={oldPercentage}
+          setPercentage={setOldPercentage}
+          calculatePercentage={oldClicked}
+          yearHeader={"Какой был год?"}
+          salaryHeader={"Какая была зарплата в месяц?"}
+          priceHeader={"Сколько стоило?"}
         />
-        <NewYear
+        <Form
           percentage={percentage}
-          calculatePercentage={calculateNewPercentage}
+          setPercentage={setPercentage}
+          calculatePercentage={newClicked}
+          yearHeader={"С каким годом сравнить?"}
+          salaryHeader={"C какой зарплатой сравнить?"}
+          priceHeader={"С какой ценой сравнить?"}
         />
       </div>
       <Result
         isOldClicked={isOldClicked}
         isNewClicked={isNewClicked}
-        year={oldYear}
         oldPercentage={oldPercentage}
         percentage={percentage}
       />

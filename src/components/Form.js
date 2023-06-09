@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function OldYear({ changeOldYear, oldPercentage, calculateOldPercentage }) {
+function Form({ percentage, setPercentage, calculatePercentage, yearHeader, salaryHeader, priceHeader }) {
   const [formValue, setFormValue] = useState({
     salary: "",
     price: "",
@@ -20,17 +20,17 @@ function OldYear({ changeOldYear, oldPercentage, calculateOldPercentage }) {
     e.preventDefault();
     const { year, salary, price } = formValue;
 
-    calculateOldPercentage(price, salary);
+    setPercentage(Number.parseFloat((price / salary) * 100));
+    calculatePercentage();
     setYear(year);
-    changeOldYear(year);
   };
 
   return (
     <form className={`calculator__form`} onSubmit={onSubmit}>
       <div>
-        <p className="calculator__header">Какой был год?</p>
+        <p className="calculator__header">{yearHeader}</p>
         <input
-          id="oldYear"
+          id="year"
           name="year"
           type="year"
           className="calculator__input"
@@ -38,9 +38,9 @@ function OldYear({ changeOldYear, oldPercentage, calculateOldPercentage }) {
           onChange={handleChange}
           required
         />
-        <p className="calculator__header">Какая была зарплата в месяц?</p>
+        <p className="calculator__header">{salaryHeader}</p>
         <input
-          id="oldSalary"
+          id="salary"
           name="salary"
           type="salary"
           className="calculator__input"
@@ -48,9 +48,9 @@ function OldYear({ changeOldYear, oldPercentage, calculateOldPercentage }) {
           onChange={handleChange}
           required
         />
-        <p className="calculator__header">Сколько стоило?</p>
+        <p className="calculator__header">{priceHeader}</p>
         <input
-          id="oldPrice"
+          id="price"
           name="price"
           type="price"
           className="calculator__input"
@@ -63,10 +63,10 @@ function OldYear({ changeOldYear, oldPercentage, calculateOldPercentage }) {
         Посчитать
       </button>
       <div className="calculator__result">
-        В {year} году стоило {oldPercentage}% от зарплаты
+        В {year} году стоило {percentage.toFixed(2)}% от зарплаты
       </div>
     </form>
   );
 }
 
-export default OldYear;
+export default Form;
