@@ -3,6 +3,14 @@ import Header from "./Header";
 import Form from "./Form";
 import Result from "./Result";
 import Footer from "./Footer";
+import {
+  oldYearHeader,
+  oldSalaryHeader,
+  oldPriceHeader,
+  newYearHeader,
+  newSalaryHeader,
+  newPriceHeader,
+} from "../utils/constants";
 
 function App() {
   const [oldPercentage, setOldPercentage] = useState(0);
@@ -13,11 +21,11 @@ function App() {
 
   function oldClicked() {
     setIsOldClicked(true);
-  };
+  }
 
   function newClicked() {
     setIsNewClicked(true);
-  };
+  }
 
   return (
     <div className="page">
@@ -27,17 +35,17 @@ function App() {
           percentage={oldPercentage}
           setPercentage={setOldPercentage}
           buttonClicked={oldClicked}
-          yearHeader={"Какой был год?"}
-          salaryHeader={"Какая была зарплата в месяц?"}
-          priceHeader={"Сколько стоило?"}
+          yearHeader={oldYearHeader}
+          salaryHeader={oldSalaryHeader}
+          priceHeader={oldPriceHeader}
         />
         <Form
           percentage={newPercentage}
           setPercentage={setNewPercentage}
           buttonClicked={newClicked}
-          yearHeader={"С каким годом сравнить?"}
-          salaryHeader={"C какой зарплатой сравнить?"}
-          priceHeader={"С какой ценой сравнить?"}
+          yearHeader={newYearHeader}
+          salaryHeader={newSalaryHeader}
+          priceHeader={newPriceHeader}
         />
       </div>
       <Result
