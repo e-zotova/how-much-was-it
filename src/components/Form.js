@@ -1,6 +1,13 @@
 import React, { useState } from "react";
 
-function Form({ percentage, setPercentage, buttonClicked, yearHeader, salaryHeader, priceHeader }) {
+function Form({
+  percentage,
+  setPercentage,
+  buttonClicked,
+  yearHeader,
+  salaryHeader,
+  priceHeader,
+}) {
   const [formValue, setFormValue] = useState({
     salary: "",
     price: "",
@@ -27,8 +34,10 @@ function Form({ percentage, setPercentage, buttonClicked, yearHeader, salaryHead
 
   return (
     <form className={`calculator__form`} onSubmit={onSubmit}>
-      <div>
-        <p className="calculator__header">{yearHeader}</p>
+      <fieldset>
+        <label htmlFor="year" className="calculator__header">
+          {yearHeader}{" "}
+        </label>
         <input
           id="year"
           name="year"
@@ -38,7 +47,9 @@ function Form({ percentage, setPercentage, buttonClicked, yearHeader, salaryHead
           onChange={handleChange}
           required
         />
-        <p className="calculator__header">{salaryHeader}</p>
+        <label htmlFor="salary" className="calculator__header">
+          {salaryHeader}{" "}
+        </label>
         <input
           id="salary"
           name="salary"
@@ -48,7 +59,9 @@ function Form({ percentage, setPercentage, buttonClicked, yearHeader, salaryHead
           onChange={handleChange}
           required
         />
-        <p className="calculator__header">{priceHeader}</p>
+        <label htmlFor="price" className="calculator__header">
+          {priceHeader}{" "}
+        </label>
         <input
           id="price"
           name="price"
@@ -58,12 +71,12 @@ function Form({ percentage, setPercentage, buttonClicked, yearHeader, salaryHead
           onChange={handleChange}
           required
         />
-      </div>
+      </fieldset>
       <button type="submit" className="calculator__save-button">
         Посчитать
       </button>
       <div className="calculator__result">
-        В {year} году стоило {percentage.toFixed(2)}% от зарплаты
+        В {year} году стоило {percentage?.toFixed(2)}% от зарплаты
       </div>
     </form>
   );

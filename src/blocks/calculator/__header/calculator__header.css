@@ -1,4 +1,5 @@
 .calculator__header {
-  margin-top: 10px;
-  margin-bottom: 10px;
+  display: block;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
