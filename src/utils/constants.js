@@ -1,16 +1,16 @@
-const oldYearHeader = "Какой был год?";
-const oldSalaryHeader = "Какая была зарплата в месяц?";
-const oldPriceHeader = "Сколько стоило?";
+const oldYearQuestion = "Какой был год?";
+const oldSalaryQuestion = "Какая была зарплата в месяц?";
+const oldPriceQuestion = "Сколько стоило?";
 
-const newYearHeader = "С каким годом сравнить?";
-const newSalaryHeader = "C какой зарплатой сравнить?";
-const newPriceHeader = "С какой ценой сравнить?";
+const newYearQuestion = "С каким годом сравнить?";
+const newSalaryQuestion = "C какой зарплатой сравнить?";
+const newPriceQuestion = "С какой ценой сравнить?";
 
 module.exports = {
-  oldYearHeader,
-  oldSalaryHeader,
-  oldPriceHeader,
-  newYearHeader,
-  newSalaryHeader,
-  newPriceHeader,
+  oldYearQuestion,
+  oldSalaryQuestion,
+  oldPriceQuestion,
+  newYearQuestion,
+  newSalaryQuestion,
+  newPriceQuestion,
 };

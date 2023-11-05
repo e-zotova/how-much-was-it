@@ -4,12 +4,12 @@ import Form from "./Form";
 import Result from "./Result";
 import Footer from "./Footer";
 import {
-  oldYearHeader,
-  oldSalaryHeader,
-  oldPriceHeader,
-  newYearHeader,
-  newSalaryHeader,
-  newPriceHeader,
+  oldYearQuestion,
+  oldSalaryQuestion,
+  oldPriceQuestion,
+  newYearQuestion,
+  newSalaryQuestion,
+  newPriceQuestion,
 } from "../utils/constants";
 
 function App() {
@@ -35,17 +35,17 @@ function App() {
           percentage={oldPercentage}
           setPercentage={setOldPercentage}
           buttonClicked={oldClicked}
-          yearHeader={oldYearHeader}
-          salaryHeader={oldSalaryHeader}
-          priceHeader={oldPriceHeader}
+          yearHeader={oldYearQuestion}
+          salaryHeader={oldSalaryQuestion}
+          priceHeader={oldPriceQuestion}
         />
         <Form
           percentage={newPercentage}
           setPercentage={setNewPercentage}
           buttonClicked={newClicked}
-          yearHeader={newYearHeader}
-          salaryHeader={newSalaryHeader}
-          priceHeader={newPriceHeader}
+          yearHeader={newYearQuestion}
+          salaryHeader={newSalaryQuestion}
+          priceHeader={newPriceQuestion}
         />
       </div>
       <Result
