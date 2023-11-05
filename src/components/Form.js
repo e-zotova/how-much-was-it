@@ -34,7 +34,7 @@ function Form({ percentage, setPercentage, buttonClicked, yearHeader, salaryHead
           name="year"
           type="year"
           className="calculator__input"
-          value={formValue.year}
+          value={formValue.year || ""}
           onChange={handleChange}
           required
         />
@@ -44,7 +44,7 @@ function Form({ percentage, setPercentage, buttonClicked, yearHeader, salaryHead
           name="salary"
           type="salary"
           className="calculator__input"
-          value={formValue.salary}
+          value={formValue.salary || ""}
           onChange={handleChange}
           required
         />
@@ -54,7 +54,7 @@ function Form({ percentage, setPercentage, buttonClicked, yearHeader, salaryHead
           name="price"
           type="price"
           className="calculator__input"
-          value={formValue.price}
+          value={formValue.price || ""}
           onChange={handleChange}
           required
         />
