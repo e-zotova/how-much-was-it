@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/react-gh-pages/static/css/main.6ed14653.css",
-    "main.js": "/react-gh-pages/static/js/main.60a6311f.js",
-    "static/js/787.c82a6fc1.chunk.js": "/react-gh-pages/static/js/787.c82a6fc1.chunk.js",
-    "index.html": "/react-gh-pages/index.html",
-    "main.6ed14653.css.map": "/react-gh-pages/static/css/main.6ed14653.css.map",
-    "main.60a6311f.js.map": "/react-gh-pages/static/js/main.60a6311f.js.map",
-    "787.c82a6fc1.chunk.js.map": "/react-gh-pages/static/js/787.c82a6fc1.chunk.js.map"
+    "main.css": "/how-much-was-it/static/css/main.6ed14653.css",
+    "main.js": "/how-much-was-it/static/js/main.705bffc7.js",
+    "static/js/787.c82a6fc1.chunk.js": "/how-much-was-it/static/js/787.c82a6fc1.chunk.js",
+    "index.html": "/how-much-was-it/index.html",
+    "main.6ed14653.css.map": "/how-much-was-it/static/css/main.6ed14653.css.map",
+    "main.705bffc7.js.map": "/how-much-was-it/static/js/main.705bffc7.js.map",
+    "787.c82a6fc1.chunk.js.map": "/how-much-was-it/static/js/787.c82a6fc1.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.6ed14653.css",
-    "static/js/main.60a6311f.js"
+    "static/js/main.705bffc7.js"
   ]
 }
