@@ -8,7 +8,7 @@ function Form({
   salaryHeader,
   priceHeader,
   year,
-  setYear
+  setYear,
 }) {
   const [formValue, setFormValue] = useState({
     salary: "",
@@ -36,10 +36,11 @@ function Form({
     <form className={`calculator__form`} onSubmit={onSubmit}>
       <fieldset>
         <label htmlFor="year" className="calculator__header">
-          {yearHeader}{" "}
+          {yearHeader}
         </label>
         <input
           id="year"
+          data-testid="year"
           name="year"
           type="number"
           className="calculator__input"
@@ -51,10 +52,11 @@ function Form({
           required
         />
         <label htmlFor="salary" className="calculator__header">
-          {salaryHeader}{" "}
+          {salaryHeader}
         </label>
         <input
           id="salary"
+          data-testid="salary"
           name="salary"
           type="number"
           className="calculator__input"
@@ -64,10 +66,11 @@ function Form({
           required
         />
         <label htmlFor="price" className="calculator__header">
-          {priceHeader}{" "}
+          {priceHeader}
         </label>
         <input
           id="price"
+          data-testid="price"
           name="price"
           type="number"
           className="calculator__input"
