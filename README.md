@@ -10,3 +10,6 @@
 `npm run build` - сборка проекта
 
 `npm run start` - запуск проекта
+
+
+[Проект на GithubPages](https://e-zotova.github.io/how-much-was-it/)
