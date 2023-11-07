@@ -41,10 +41,13 @@ function Form({
         <input
           id="year"
           name="year"
-          type="year"
+          type="number"
           className="calculator__input"
           value={formValue.year || ""}
           onChange={handleChange}
+          min="1900"
+          max="2099"
+          step="1"
           required
         />
         <label htmlFor="salary" className="calculator__header">
@@ -53,10 +56,11 @@ function Form({
         <input
           id="salary"
           name="salary"
-          type="salary"
+          type="number"
           className="calculator__input"
           value={formValue.salary || ""}
           onChange={handleChange}
+          min="1"
           required
         />
         <label htmlFor="price" className="calculator__header">
@@ -65,10 +69,11 @@ function Form({
         <input
           id="price"
           name="price"
-          type="price"
+          type="number"
           className="calculator__input"
           value={formValue.price || ""}
           onChange={handleChange}
+          min="1"
           required
         />
       </fieldset>
