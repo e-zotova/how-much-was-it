@@ -7,13 +7,13 @@ function Form({
   yearHeader,
   salaryHeader,
   priceHeader,
+  year,
+  setYear
 }) {
   const [formValue, setFormValue] = useState({
     salary: "",
     price: "",
   });
-
-  const [year, setYear] = useState("");
 
   const handleChange = (e) => {
     const { name, value } = e.target;

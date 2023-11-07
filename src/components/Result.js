@@ -5,6 +5,8 @@ function Result({
   isNewClicked,
   oldPercentage,
   newPercentage,
+  oldYear,
+  newYear
 }) {
   const [result, setResult] = useState("");
 
@@ -16,7 +18,7 @@ function Result({
     } else {
       setResult("лучше.");
     }
-  }, [isOldClicked, isNewClicked, oldPercentage, newPercentage]);
+  }, [isOldClicked, isNewClicked, oldPercentage, newPercentage, oldYear, newYear]);
 
   return (
     <div className="result">
@@ -25,7 +27,12 @@ function Result({
           Чтобы увидеть результат, посчитайте значения за оба года.
         </p>
       )}
-      {isOldClicked && isNewClicked && (
+      {((oldYear >= newYear) && oldYear !== 0 && newYear !== 0) && (
+        <p className="result__placeholder">
+          Год в колонке слева должен быть меньше, чем год в колонке справа.
+        </p>
+      )}
+      {(oldYear < newYear) && isOldClicked && isNewClicked && (
         <p className="result__text">
           Раньше было {result}
         </p>

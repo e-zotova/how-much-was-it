@@ -15,6 +15,8 @@ import {
 function App() {
   const [oldPercentage, setOldPercentage] = useState(0);
   const [newPercentage, setNewPercentage] = useState(0);
+  const [oldYear, setOldYear] = useState(0);
+  const [newYear, setNewYear] = useState(0);
 
   const [isOldClicked, setIsOldClicked] = useState(false);
   const [isNewClicked, setIsNewClicked] = useState(false);
@@ -32,6 +34,8 @@ function App() {
       <Header className="header" />
       <div className="calculator__grid">
         <Form
+          year={oldYear}
+          setYear={setOldYear}
           percentage={oldPercentage}
           setPercentage={setOldPercentage}
           buttonClicked={oldClicked}
@@ -40,6 +44,8 @@ function App() {
           priceHeader={oldPriceQuestion}
         />
         <Form
+          year={newYear}
+          setYear={setNewYear}
           percentage={newPercentage}
           setPercentage={setNewPercentage}
           buttonClicked={newClicked}
@@ -53,6 +59,8 @@ function App() {
         isNewClicked={isNewClicked}
         oldPercentage={oldPercentage}
         newPercentage={newPercentage}
+        oldYear={oldYear}
+        newYear={newYear}
       />
       <Footer />
     </div>
