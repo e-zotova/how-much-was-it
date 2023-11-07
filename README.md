@@ -13,5 +13,9 @@
 
 `npm run start` - запуск проекта
 
+`npm run test` - запуск автотестов (пока только для инпутов)
 
-[Проект на GithubPages](https://e-zotova.github.io/how-much-was-it/)
+`npm run deploy` - деплой на Github Pages
+
+
+[Проект на Github Pages](https://e-zotova.github.io/how-much-was-it/)
